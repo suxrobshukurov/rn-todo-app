@@ -1,11 +1,12 @@
-import { StyleSheet, View, TextInput, Button, Alert  } from 'react-native';
-import React, {useState} from "react";
+import { StyleSheet, View, TextInput, Button, Alert } from 'react-native';
+import React, { useState } from "react";
+import { THEME } from '../theme';
 
-export const AddTodo = ({onSubmit}) => {
+export const AddTodo = ({ onSubmit }) => {
     const [value, setValue] = useState('')
 
     const pressHandler = () => {
-        if(value.trim()){
+        if (value.trim()) {
             onSubmit(value);
             setValue('')
         } else {
@@ -13,15 +14,15 @@ export const AddTodo = ({onSubmit}) => {
         }
     }
 
-    return(
+    return (
         <View style={styles.block}>
-            <TextInput 
-            style={styles.input} 
-            placeholder="Введите текст..."
-            value={value}
-            onChangeText={setValue}
+            <TextInput
+                style={styles.input}
+                placeholder="Введите текст..."
+                value={value}
+                onChangeText={setValue}
             />
-            <Button title={"Добавить"}  onPress={pressHandler}/>
+            <Button title={"Добавить"} onPress={pressHandler} color={THEME.MAIN_DEFAULT} />
         </View>
     );
 }
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
     input: {
         width: '70%',
         borderBottomWidth: 1,
-        borderBottomColor: '#000',
+        borderBottomColor: THEME.MAIN_DARK,
         borderStyle: 'solid',
     },
     button: {}
