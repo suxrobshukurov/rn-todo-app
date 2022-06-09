@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		padding: 15,
 		backgroundColor: THEME.MAIN_LIGHT,
+		borderRadius: 10,
 		elevation: 8,
 		shadowColor: THEME.MAIN_DARK,
 		shadowOpacity: 0.5,
