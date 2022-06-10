@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     input: {
-        width: '70%',
+        width: '60%',
         borderBottomWidth: 1,
         borderBottomColor: THEME.MAIN_DARK,
         borderStyle: 'solid',
