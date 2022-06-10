@@ -19,6 +19,9 @@ export const AddTodo = ({ onSubmit }) => {
             <TextInput
                 style={styles.input}
                 placeholder="Введите текст..."
+                autoCapitalize='none'
+                autoCorrect={false}
+                maxLength={64}
                 value={value}
                 onChangeText={setValue}
             />

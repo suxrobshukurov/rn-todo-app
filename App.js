@@ -45,11 +45,26 @@ export default function App() {
 
     }
 
+    const updateTodo = (id, title) => {
+        setTodos(old => old.map(todo => {
+            if(todo.id === id){
+                todo.title = title
+            }
+            return todo;
+        }))
+    }
+
     let content = <MainScreen todos={todos} addTodo={addTodo} removeTodo={removeTodo} openTodo={setTodoId} />;
 
     const selectedTodo = todos.find(todo => todo.id === todoId);
     if (todoId) {
-        content = <TodoScreen goBack={() => setTodoId(null)} todo={selectedTodo} onRemove={removeTodo} />
+        content = (
+        <TodoScreen 
+            goBack={() => setTodoId(null)} 
+            todo={selectedTodo} 
+            onRemove={removeTodo} 
+            onSave={updateTodo}
+            />)
     }
 
     return (
